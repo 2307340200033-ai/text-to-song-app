@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Text-to-Song Composer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- responsive scaling -->
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://unpkg.com/tone@latest/build/Tone.js"></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>🎵 Text-to-Song Composer</h1>
+    <p>Paste text or upload a file, then choose language + genre to generate a song.</p>
+    <button id="darkModeBtn">🌙 Toggle Dark Mode</button>
+  </header>
+
+  <main>
+    <!-- Input Card -->
+    <section class="card">
+      <h2>📝 Input</h2>
+      <textarea id="inputText" placeholder="Type or paste text here..."></textarea>
+      <div class="upload">
+        <label for="fileInput">Choose File:</label>
+        <input type="file" id="fileInput" />
+      </div>
+      <!-- Drag & drop hidden on mobile -->
+      <div id="dropZone" class="desktop-only">Drag & drop text files here</div>
+    </section>
+
+    <!-- Settings Card -->
+    <section class="card">
+      <h2>⚙️ Settings</h2>
+      <label for="language">Language:</label>
+      <select id="language">
+        <option value="en">English</option>
+        <option value="hi">Hindi</option>
+        <option value="fr">French</option>
+        <option value="es">Spanish</option>
+      </select>
+      <label for="genre">Genre:</label>
+      <select id="genre">
+        <option value="hiphop">🎤 Hip Hop</option>
+        <option value="rock">🎸 Rock</option>
+        <option value="party">💃 Party</option>
+        <option value="romantic">❤️ Romantic</option>
+        <option value="sad">😢 Sad</option>
+      </select>
+      <button id="composeLyricsBtn">Compose Lyrics</button>
+      <button id="composeMusicBtn">Compose Music</button>
+    </section>
+
+    <!-- Lyrics Card -->
+    <section class="card">
+      <h2>📄 Lyrics</h2>
+      <pre id="lyricsOut"></pre>
+      <button id="saveLyricsBtn">Save Lyrics</button>
+      <button id="loadLyricsBtn">Load Lyrics</button>
+      <button id="downloadLyricsBtn">Download Lyrics (.txt)</button>
+    </section>
+
+    <!-- Player Card -->
+    <section class="card">
+      <h2>🎶 Player</h2>
+      <div id="status"></div>
+      <canvas id="visualizer" width="600" height="120"></canvas>
+      <label for="recordLength">Recording length (seconds):</label>
+      <input type="number" id="recordLength" value="10" min="5" max="120" />
+      <progress id="recordProgress" value="0" max="100"></progress>
+      <label for="volumeControl">Volume:</label>
+      <input type="range" id="volumeControl" min="0" max="1" step="0.1" value="1" />
+      <button id="muteBtn">🔇 Mute</button>
+      <button id="pauseResumeBtn">⏸️ Pause</button>
+      <button id="stopMusicBtn">Stop Music</button>
+      <button id="downloadMusicBtn">Download Music (.wav)</button>
+      <button id="cancelRecordingBtn">Cancel Recording</button>
+      <button id="previewRecordingBtn">Preview Recording</button>
+      <button id="reRecordBtn">Re‑record</button>
+      <label for="trackProgress">Track Progress:</label>
+      <input type="range" id="trackProgress" min="0" max="100" value="0" />
+    </section>
+
+    <!-- Playlist Card -->
+    <section class="card">
+      <h2>📂 Playlist</h2>
+      <ul id="playlist"></ul>
+      <button id="playAllBtn">▶️ Play All</button>
+      <button id="shuffleBtn">🔀 Shuffle</button>
+      <button id="loopBtn">🔁 Loop Mode</button>
+      <button id="skipBackBtn">⏮️ Skip Back</button>
+      <button id="skipForwardBtn">⏭️ Skip Forward</button>
+      <button id="clearPlaylistBtn">Clear Playlist</button>
+    </section>
+  </main>
+</body>
+</html>
