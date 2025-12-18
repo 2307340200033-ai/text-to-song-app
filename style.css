@@ -1,0 +1,172 @@
+/* Base styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f9f9f9;
+  color: #222;
+  line-height: 1.5;
+}
+
+header {
+  text-align: center;
+  background: #1f6feb;
+  color: #fff;
+  padding: 20px;
+}
+
+h1, h2 {
+  margin: 0 0 10px;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 10px;
+}
+
+/* Card layout */
+.card {
+  background: #fff;
+  padding: 16px;
+  margin: 12px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  flex: 1 1 320px;
+  max-width: 600px;
+}
+
+/* Inputs */
+textarea {
+  width: 100%;
+  height: 120px;
+  margin-top: 8px;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  resize: vertical;
+}
+
+input[type="file"],
+input[type="number"],
+select {
+  margin: 8px 0;
+  padding: 6px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+input[type="range"] {
+  width: 100%;
+  margin: 10px 0;
+}
+
+/* Buttons */
+button {
+  margin: 6px 4px;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 6px;
+  background: #1f6feb;
+  color: #fff;
+  cursor: pointer;
+  font-size: 15px;
+  transition: background 0.2s ease;
+}
+
+button:hover {
+  background: #1554b0;
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+/* Drag & drop zone */
+#dropZone {
+  border: 2px dashed #aaa;
+  padding: 20px;
+  text-align: center;
+  margin-top: 10px;
+  border-radius: 6px;
+  color: #555;
+}
+
+#dropZone.dragover {
+  background: #e0f7fa;
+  border-color: #1f6feb;
+}
+
+/* Hide drag-drop on mobile */
+.desktop-only {
+  display: block;
+}
+@media (max-width: 768px) {
+  .desktop-only {
+    display: none;
+  }
+}
+
+/* Visualizer */
+#visualizer {
+  width: 100%;
+  height: 120px;
+  background: #111;
+  border-radius: 6px;
+  margin: 10px 0;
+}
+
+/* Progress bars */
+progress {
+  width: 100%;
+  height: 20px;
+  margin: 10px 0;
+}
+
+/* Playlist */
+#playlist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#playlist li {
+  background: #f0f0f0;
+  margin: 6px 0;
+  padding: 8px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#playlist li button {
+  background: #1f6feb;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+#playlist li button:hover {
+  background: #1554b0;
+}
+
+/* Dark mode */
+body.dark {
+  background: #121212;
+  color: #eee;
+}
+
+body.dark .card {
+  background: #1e1e1e;
+  color: #eee;
+}
+
+body.dark header {
+  background: #333;
+}
